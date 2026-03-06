@@ -1,0 +1,50 @@
+clear;
+clc;
+k = 18.2;
+n = 3.9;
+v = 1;
+fi = %pi/6;
+x1 = k/(n+1);
+x2 = k/(n-1);
+a = sqrt(n^2 - 1);
+
+function dr = f(theta,r )
+    dr = r/a;
+endfunction
+
+theta = 0:0.1:6*%pi;
+
+//первое случае
+
+r0 =x1;
+theta0 = 0;
+r = ode(r0, theta0, theta, f);
+
+//второе случае
+
+r02 = x2;
+theta02 = -%pi;
+r2 = ode(r02,theta02,theta , f);
+
+function y = f2(t)
+    y = tan(fi) * t;
+endfunction
+
+t = 0:0.1:100;
+
+
+polarplot(theta, r , style=color('green'));
+
+
+
+polarplot(theta, r2 , style=color('blue'));
+
+
+
+plot2d(t, f2(t), style=color('red'));
+
+
+
+
+
+
