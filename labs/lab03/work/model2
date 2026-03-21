@@ -1,0 +1,38 @@
+clear;
+clc;
+
+// parametros
+x0 = 12000;
+y0 = 7000;
+t0 = 0;
+tmax = 30;
+dt = 0.1;
+t = t0:dt:tmax;
+
+a = 0.25;
+b = 0.5;
+c = 0.00005;
+h = 0.15;
+
+function p = P(t)
+    p = 50;
+endfunction
+
+function q = Q(t)
+    q = 30;
+endfunction
+
+function dy = syst2(t, y)
+    dy(1) = -a*y(1) - b*y(2) + P(t);
+    dy(2) = -c*y(1)*y(2) - h*y(2) + Q(t);
+endfunction
+
+v0 = [x0; y0];
+y = ode(v0, t0, t, syst2);
+
+scf(2);
+plot(t, y(1,:), 'b');
+plot(t, y(2,:), 'r');
+xgrid();
+xtitle("Modelo 2: regular vs partisanos", "t", "Numero de tropas");
+legend("x(t)","y(t)");

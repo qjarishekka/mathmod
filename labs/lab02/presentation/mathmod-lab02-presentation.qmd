@@ -1,0 +1,160 @@
+---
+## Author
+author:
+  name: Кхари Жекка Кализая Арсе
+  email: 1032234412@rudn.ru
+  affiliation:
+    - name: Российский университет дружбы народов
+      country: Российская Федерация
+      postal-code: 117198
+      city: Москва
+      address: ул. Миклухо-Маклая, д. 6
+## Title
+title: Презентация №2
+subtitle: Задача о погоне
+license: CC BY
+date: today
+date-format: "YYYY-MM-DD" # Example: 2025-09-06
+---
+
+# описание задачи
+
+## задача
+
+:::::::::::::: {.columns align=center}
+
+::: {.column width="90%"}
+
+![](./image/01.png)
+
+:::
+::::::::::::::
+
+
+## расположение объектов в секунде нуль
+
+:::::::::::::: {.columns align=center}
+
+::: {.column width="90%"}
+
+![](./image/02.png)
+
+:::
+::::::::::::::
+
+
+
+# решения задачи для общего случая
+
+## уравнения для общего случая
+
+:::::::::::::: {.columns align=center}
+
+::: {.column width="90%"}
+
+![](./image/fig00001.png)
+
+:::
+::::::::::::::
+
+## уравнения для общего случая
+
+:::::::::::::: {.columns align=center}
+
+::: {.column width="90%"}
+
+![](./image/fig00002.png)
+
+:::
+::::::::::::::
+
+
+
+## графика примера
+
+:::::::::::::: {.columns align=center}
+
+::: {.column width="90%"}
+
+![](./image/fig00003.png)
+
+:::
+::::::::::::::
+
+## точка пересечения 
+
+:::::::::::::: {.columns align=center}
+
+::: {.column width="90%"}
+
+![](./image/fig00004.png)
+
+:::
+::::::::::::::
+
+## код примера
+
+:::::::::::::: {.columns align=center}
+
+::: {.column width="90%"}
+
+![](./image/fig00005.png)
+
+:::
+::::::::::::::
+
+## код общего решения 
+
+:::::::::::::: {.columns align=center}
+
+::: {.column width="90%"}
+
+![](./image/fig00006.png)
+
+:::
+::::::::::::::
+
+## код общего решения 
+
+:::::::::::::: {.columns align=center}
+
+::: {.column width="90%"}
+
+![](./image/fig00007.png)
+
+:::
+::::::::::::::
+
+## код общего решения 
+
+:::::::::::::: {.columns align=center}
+
+::: {.column width="90%"}
+
+![](./image/fig00008.png)
+
+:::
+::::::::::::::
+
+
+## графика общего решения
+
+:::::::::::::: {.columns align=center}
+
+::: {.column width="90%"}
+
+![](./image/fig00009.png)
+
+:::
+::::::::::::::
+
+## точка пересечения общего решения
+
+:::::::::::::: {.columns align=center}
+
+::: {.column width="90%"}
+
+![](./image/fig00010.png)
+
+:::
+::::::::::::::

@@ -1,0 +1,38 @@
+clear;
+clc;
+
+// parametros
+x0 = 20000;
+y0 = 15000;
+t0 = 0;
+tmax = 20;
+dt = 0.1;
+t = t0:dt:tmax;
+
+a = 0.3;
+b = 0.6;
+c = 0.8;
+h = 0.4;
+
+function p = P(t)
+    p = 100*sin(t) + 200;
+endfunction
+
+function q = Q(t)
+    q = 80*cos(t) + 150;
+endfunction
+
+function dy = syst1(t, y)
+    dy(1) = -a*y(1) - b*y(2) + P(t);
+    dy(2) = -c*y(1) - h*y(2) + Q(t);
+endfunction
+
+v0 = [x0; y0];
+y = ode(v0, t0, t, syst1);
+
+scf(1);
+plot(t, y(1,:), 'b');
+plot(t, y(2,:), 'r');
+xgrid();
+xtitle("Modelo 1: regular vs regular", "t", "Numero de tropas");
+legend("x(t)","y(t)");

@@ -1,0 +1,38 @@
+Ыclear;
+clc;
+
+// parametros
+x0 = 9000;
+y0 = 11000;
+t0 = 0;
+tmax = 40;
+dt = 0.1;
+t = t0:dt:tmax;
+
+a = 0.1;
+b = 0.00004;
+c = 0.00005;
+h = 0.1;
+
+function p = P(t)
+    p = 20;
+endfunction
+
+function q = Q(t)
+    q = 20;
+endfunction
+
+function dy = syst3(t, y)
+    dy(1) = -a*y(1) - b*y(1)*y(2) + P(t);
+    dy(2) = -h*y(2) - c*y(1)*y(2) + Q(t);
+endfunction
+
+v0 = [x0; y0];Ы
+y = ode(v0, t0, t, syst3);
+
+scf(3);
+plot(t, y(1,:), 'b');
+plot(t, y(2,:), 'r');
+xgrid();
+xtitle("Modelo 3: partisanos vs partisanos", "t", "Numero de tropas");
+legend("x(t)","y(t)");
