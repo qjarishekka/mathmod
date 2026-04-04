@@ -10,7 +10,7 @@ author:
       city: Москва
       address: ул. Миклухо-Маклая, д. 6
 ## Title
-title: Лабораторная работа № 2.pdf
+title: Лабораторная работа № 2
 subtitle: Модель боевых действий 
 license: CC BY
 date: today

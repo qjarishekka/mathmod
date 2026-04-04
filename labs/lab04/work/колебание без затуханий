@@ -1,0 +1,32 @@
+clc;
+clear;
+close;
+
+w = 1.00;
+g = 0.00;
+
+function f = ext(t)
+    f = 0;
+endfunction
+
+function dx = syst(t, x)
+    dx(1) = x(2);
+    dx(2) = -w*w*x(1) - 2*g*x(2) + ext(t);
+endfunction
+
+t0 = 0;
+x0 = [-1; 1];   // x(0)=-1, x'(0)=1
+
+t = 0:0.05:30;
+
+x = ode(x0, t0, t, syst);
+
+scf(1);
+plot(t, x(1,:));
+xtitle("решение без затуханий,", "t", "x(t)");
+xgrid();
+
+scf(2);
+plot(x(1,:), x(2,:));
+xtitle("фаза без затуханий", "x", "x");
+xgrid();
