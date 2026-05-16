@@ -1,0 +1,26 @@
+n = 100;
+a = 1;
+
+Skill = rand(n, 1);
+Luck = rand(n, 1);
+
+Outcome = a * Luck + (1 - a) * Skill;
+Win = Outcome > 0.8;
+
+idx_win = find(Win == %t);
+idx_lose = find(Win == %f);
+
+clf();
+
+if size(idx_lose, "*") > 0 then
+    plot(Skill(idx_lose), Outcome(idx_lose), "bo");
+end
+
+if size(idx_win, "*") > 0 then
+    plot(Skill(idx_win), Outcome(idx_win), "ro");
+end
+
+xlabel("Skill (умение)");
+ylabel("Outcome результат");
+title("Лотерея с а = 1: результат зависит только от удачи");
+legend("Потеряли", "Выиграли");

@@ -1,0 +1,63 @@
+t0 = 0; //начальный момент времени
+N0 = 115; // количество людей, знающих о товаре в начальный момент времени
+N = 500;  // максимальное количество людей, которых может заинтересовать товар
+t = 0:0.1:30; // временной промежуток (длительность рекламной компании)
+
+//alpha1 > alpha2
+function g = k1(t)
+    g = 0.055; // платная реклама
+endfunction
+
+function v = p1(t)
+    v = 0.0005; // сарафанного радио
+endfunction
+
+function xd = f1(t, x)
+    xd = (k1(t) + p1(t)*x) * (N - x);
+endfunction
+
+x1 = ode(N0, t0, t, f1);
+
+
+//alpha1 < alpha2
+function g = k2(t)
+    g = 0.005; //платная реклама
+endfunction
+
+function v = p2(t)
+    v = 0.0018; //сарафанного радио
+endfunction
+
+function xd = f2(t, x)
+    xd = (k2(t) + p2(t)*x) * (N - x);
+endfunction
+
+x2 = ode(N0, t0, t, f2);
+
+
+// только платная реклама
+function xd = f_paid(t, x)
+    xd = k1(t) * (N - x);
+endfunction
+
+x_paid = ode(N0, t0, t, f_paid);
+
+
+// только сарафанного радио
+function xd = f_word(t, x)
+    xd = p1(t) * x * (N - x);
+endfunction
+
+x_word = ode(N0, t0, t, f_word);
+
+
+// графики
+plot(t, x1, "r");
+plot(t, x2, "b");
+plot(t, x_paid, "g");
+plot(t, x_word, "m");
+
+legend("alpha1 > alpha2", "alpha1 < alpha2", "только платная реклама", "только сарафанного радио");
+xlabel("t");
+ylabel("n(t)");
+title("Распространение рекламы салона красоты");
